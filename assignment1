@@ -1,0 +1,48 @@
+Solution to Assignment 1.
+
+a. absolute pathname: 
+	cd /home/vagrant/tests
+
+b. relative pathneame: 
+	cd tests
+
+c. Redirect text content using the echo command to a file:
+	echo Hello A >> misc/fileA
+
+d. Craete an empty file in the misc directory and populate later 
+	touch misc/fileB | echo dummy content dummy content >> misc/fileB
+
+e. Copy contents of File A to File C
+	cp misc/fileA misc/fileC
+
+f. Move contents of File B to File D
+	mv  misc/fileB misc/fileD
+
+g. Create a tar archive called isc.tar for the contents in misc directory
+	sudo tar -cf misc.tar misc/fileA misc/fileC misc/fileD
+
+h. Compress the tar archive to create a misc.tar.gz file
+	sudo gzip misc.tar
+
+i. Create a user and forces the user to change his/her password upon login
+	sudo adduser dami
+	sudo passwd -e dami
+
+j. Lock a user's password
+	sudo passwd -l dami
+
+k. Create a user with no login user(system user)
+	sudo adduser --system dami
+
+l. Disable password based authentication for ssh
+	vi /etc/ssh/sshd_config
+	find the following contents: PasswordAuthentication,ChallengeResponseAuthetication and change their values to no 
+	save the changes with :wq on vim and enter the next command
+	sudo service ssh restart.
+
+m. Disable root login for ssh 
+	vi /etc/ssh/sshd_config
+        find the following contents:PermitRootLogin and change their values to no
+        save the changes with :wq on vim and enter the next command
+        sudo service ssh restart.
+
